@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var sharanone={
+var sharanOne={
    title: 'sharan |article',
    heading: 'Sharan-one',
    date: 'October 15,2016',
@@ -24,7 +24,7 @@ var sharanone={
 };
 
 function createTemplate (data) {
-    var title = data.tile;
+    var title = data.title;
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
@@ -57,9 +57,7 @@ function createTemplate (data) {
 </html>
 
 `;
-
-    return htmlTemplate;
-
+return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
