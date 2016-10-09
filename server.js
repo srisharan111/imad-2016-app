@@ -5,12 +5,69 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var sharanone={
+   title: 'sharan |article',
+   heading: 'Sharan-one',
+   date: 'October 15,2016',
+   content:`<p>
+                Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan.
+            </p>
+            <p>
+                Happy Birthday to Sharan Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan..
+            </p>
+            <p>
+                Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan.
+            </p>
+            <p>
+                Happy Birthday to Sharan.
+            </p> `
+};
+
+function createTtemplate (data) {
+    var title = data.tile;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    var htmltemplate =`
+<html>
+<head>
+    <title>
+        ${title}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link href="/ui/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <h3>
+            ${heading}
+        </h3>
+        <div>
+            ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
+    </div>
+</body>
+</html>
+
+`;
+
+    return htmltemplate;
+
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/sharan-one', function (req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'sharan-one.html'));
+    res.send(createTemplate(sharan-one));
 });
 
 app.get('/sharan-two', function (req,res) {
