@@ -9,7 +9,8 @@ var sharanOne={
    title: 'sharan |article',
    heading: 'Sharan-one',
    date: 'October 15,2016',
-   content:`<p>
+   content:`
+    <p>
                 Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan. Happy Birthday to Sharan.
             </p>
             <p>
@@ -55,7 +56,6 @@ function createTemplate (data) {
     </div>
 </body>
 </html>
-
 `;
 return htmlTemplate;
 }
@@ -65,7 +65,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/sharan-one', function (req,res) {
-    res.send(createTemplate(sharan-one));
+    res.send(createTemplate(sharanOne));
 });
 
 app.get('/sharan-two', function (req,res) {
