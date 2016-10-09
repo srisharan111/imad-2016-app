@@ -23,12 +23,12 @@ var sharanone={
             </p> `
 };
 
-function createTtemplate (data) {
+function createTemplate (data) {
     var title = data.tile;
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
-    var htmltemplate =`
+    var htmlTemplate =`
 <html>
 <head>
     <title>
@@ -58,7 +58,7 @@ function createTtemplate (data) {
 
 `;
 
-    return htmltemplate;
+    return htmlTemplate;
 
 }
 
